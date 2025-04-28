@@ -1,0 +1,12 @@
+body {
+    font-family: 'Inter', Arial, sans-serif;
+  }
+
+
+.app-container {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f6fbfd;
+    color: #1a2b3b;
+    margin: 0;
+    padding: 0;
+  }
