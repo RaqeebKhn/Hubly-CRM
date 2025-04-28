@@ -1,40 +1,52 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4vw 1rem 4vw;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  }
-  
-  .header-logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: bold;
-  }
-  
-  .logo-icon {
-    font-size: 2rem;
-    margin-right: 0.5rem;
-  }
-  
-  .header-nav a {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    color: #1a2b3b;
-    font-weight: 500;
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
-    transition: background 0.2s;
-  }
-  
-  .signup-btn {
-    background: #2563eb;
-    color: #fff;
-    border: none;
-  }
-  
-  .signup-btn:hover, .login-btn:hover {
-    background: #e6f0fa;
-  }
+/* ADDED: Footer Section Styling */
+.footer {
+  background: #fff;
+  border-top: 1px solid #e3eaf3;
+  padding: 3rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 2.2rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2.2rem;
+}
+
+.footer-links h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a2b3b;
+  margin-bottom: 0.7rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  color: #4b5c6b;
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-social {
+  margin-top: 1.2rem;
+  color: #b0b8c1;
+  font-size: 0.1rem;
+  letter-spacing: 0.5rem;
+}

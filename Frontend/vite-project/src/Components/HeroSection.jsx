@@ -1,23 +1,32 @@
 import './HeroSection.css';
+import hero from '../Assets/meeting.png'
 
 export default function HeroSection() {
   return (
-    <section className="hero-section">
-      <div className="hero-content">
-        <h1>Grow Your Business Faster with Hubly CRM</h1>
-        <p>Manage leads, automate workflows, and close deals effortlessly—all in one powerful platform.</p>
-        <div className="hero-cta">
-          <button className="get-started-btn">Get started</button>
-          <button className="watch-video-btn">▶ Watch Video</button>
+    <section className="hero-bg">
+      <div className="hero-wave"></div>
+      <div className="hero-main">
+        <div className="hero-left">
+          <h1>
+            Grow Your Business Faster<br />
+            with <span className="hubly-highlight">Hubly CRM</span>
+          </h1>
+          <p className="hero-desc">
+            Manage leads, automate workflows, and close deals effortlessly—all in one powerful platform.
+          </p>
+          <div className="hero-cta-row">
+            <button className="hero-btn-primary">Get started</button>
+            <button className="hero-btn-secondary">
+              <span className="hero-play">&#9654;</span> Watch Video
+            </button>
+          </div>
         </div>
-        <div className="hero-partners">
-        </div>
-      </div>
-      <div className="hero-image">
-        <div className="hero-img-placeholder">[Image]</div>
-        <div className="hero-stat-card">
-          <span>Net Sales</span>
-          <strong>$19,765</strong>
+        <div className="hero-right">
+        <img
+            src={hero}
+            alt="CRM Dashboard"
+            className="hero-img"
+          />
         </div>
       </div>
     </section>

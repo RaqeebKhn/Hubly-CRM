@@ -39,4 +39,153 @@
     background: #e6f0fa;
   }
 
+.hero-bg {
+    position: relative;
+    background: #f6fbfd;
+    padding-top: 0;
+    padding-bottom: 3rem;
+    overflow: hidden;
+  }
+  
+  .hero-wave {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 350px;
+    background: url('https://www.transparenttextures.com/patterns/wavecut.png'), linear-gradient(120deg, #eaf6ff 0%, #f6fbfd 100%);
+    background-size: cover;
+    z-index: 0;
+  }
+  
+  .hero-main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem 0 2rem;
+    z-index: 1;
+  }
+  
+  .hero-left {
+    flex: 1.2;
+    padding-top: 2rem;
+  }
+  
+  .hero-left h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    color: #1a2b3b;
+  }
+  
+  .hubly-highlight {
+    color: #2563eb;
+  }
+  
+  .hero-desc {
+    font-size: 1.15rem;
+    color: #4b5c6b;
+    margin-bottom: 2rem;
+    max-width: 420px;
+  }
+  
+  .hero-cta-row {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  
+  .hero-btn-primary {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+    transition: background 0.2s;
+  }
+  
+  .hero-btn-primary:hover {
+    background: #1746a2;
+  }
+  
+  .hero-btn-secondary {
+    background: #fff;
+    color: #2563eb;
+    border: 1.5px solid #2563eb;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .hero-btn-secondary:hover {
+    background: #f0f6ff;
+  }
+  
+  .hero-play {
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+  }
+  
+  .hero-right {
+    /* flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    min-width: 350px; */
+
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(37,99,235,0.08), 0 1.5px 8px rgba(0,0,0,0.03);
+    background: #fff;
+    margin: 10px;
+  }
+  
+  
+  
+  .hero-img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 10px;
+  }
+  
+ 
+  
+  
+  
+  .hero-calendar-grid {
+    display: flex;
+    gap: 0.4rem;
+    margin: 0.3rem 0;
+  }
+  .hero-calendar-grid span {
+    background: #e3eaf3;
+    border-radius: 4px;
+    padding: 0.1rem 0.5rem;
+  }
+  .hero-calendar-grid .active {
+    background: #2563eb;
+    color: #fff;
+  }
+  .hero-calendar-time {
+    font-size: 0.85rem;
+    color: #4b5c6b;
+  }
+  
   

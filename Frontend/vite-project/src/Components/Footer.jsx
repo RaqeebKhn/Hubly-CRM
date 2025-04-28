@@ -1,11 +1,14 @@
 import './Footer.css';
+import hubly from '../Assets/logo.png';
+import icon from '../Assets/social.png';
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-logo">
-        <span className="logo-icon">☁️</span>
-        <span className="logo-text">Hubly</span>
+        <span className="logo-icon">
+          <img src={hubly} alt="" />
+        </span>
       </div>
       <div className="footer-links">
         <div>
@@ -56,7 +59,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-social">
-        <span>[Social Icons]</span>
+        <span>
+        <img src={icon} alt="" />
+        </span>
       </div>
     </footer>
   );
