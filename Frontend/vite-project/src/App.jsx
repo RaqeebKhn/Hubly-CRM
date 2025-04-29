@@ -7,6 +7,7 @@ import FeaturesFunnel from './components/FeaturesFunnel';
 import PricingPlans from './components/PricingPlans';
 import Footer from './Components/Footer';
 import LoginPage from './Components/LoginPage';
+import SignupPage from './components/SignupPage';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           }
         />
         <Route path="/login" element={<LoginPage />} /> 
+        <Route path="/signup" element={<SignupPage />} />
       </Routes> 
     </Router>
   );

@@ -13,7 +13,7 @@ export default function Header() {
       </div>
       <nav className="header-nav">
       <Link to="/login" className="login-btn">Login</Link>
-        <a href="#" className="signup-btn">Sign up</a>
+      <Link to="/signup" className="signup-btn">Sign up</Link>
       </nav>
     </header>
   );

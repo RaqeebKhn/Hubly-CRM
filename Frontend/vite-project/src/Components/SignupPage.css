@@ -1,0 +1,137 @@
+.signup-root {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+  
+.signup-left {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px 40px 60px;
+    background: #fff;
+    min-width: 0;
+}
+
+  
+  .signup-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 60px;
+  }
+  
+  .signup-logo {
+    font-size: 2rem;
+    color: #1a56db;
+  }
+  
+  .signup-brand {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a56db;
+  }
+  
+  .signup-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 40px; 
+}
+  
+  .signup-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  
+  .signup-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+  }
+  
+  .signup-link {
+    font-size: 0.95rem;
+    color: #6c47ff;
+    text-decoration: none;
+  }
+  
+  .signup-form input[type="text"],
+  .signup-form input[type="email"],
+  .signup-form input[type="password"] {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+  }
+  
+  .signup-form input::placeholder {
+    color: #666;
+  }
+  
+  .signup-checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.95rem;
+  }
+  
+  .signup-checkbox-row label {
+    color: #444;
+  }
+  
+  .signup-checkbox-row a {
+    color: #6c47ff;
+    text-decoration: underline;
+  }
+  
+  .signup-btn {
+    margin-top: 10px;
+    padding: 12px;
+    background: #d1d5db;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .signup-legal {
+    max-width: 400px;
+    font-size: 0.95rem;
+    color: #888;
+    line-height: 1.5;
+    margin-top: 32px;
+    margin-bottom: 32px; 
+}
+  
+  .signup-legal a {
+    color: #6c47ff;
+    text-decoration: underline;
+  }
+  
+  .signup-right {
+    flex: 1 1 0;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  
+  .signup-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}

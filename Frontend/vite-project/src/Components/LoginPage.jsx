@@ -23,7 +23,7 @@ export default function LoginPage() {
         <div className="login-links">
           <a href="#" className="forgot-link">Forgot password?</a>
           <div>
-            Don't have an account? <Link to="#" className="signup-link">Sign up</Link>
+            Don't have an account? <Link to="/signup" className="signup-link">Sign up</Link> 
           </div>
         </div>
         <div className="login-legal">
