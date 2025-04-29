@@ -1,4 +1,5 @@
 import './Header.css';
+import { Link } from 'react-router-dom';
 import hubly from '../Assets/logo.png';
 
 export default function Header() {
@@ -8,10 +9,10 @@ export default function Header() {
         <span className="logo-icon">
           <img src={hubly} alt="" />
         </span>
-        {/* <span className="logo-text">Hubly</span> */}
+        
       </div>
       <nav className="header-nav">
-        <a href="#" className="login-btn">Login</a>
+      <Link to="/login" className="login-btn">Login</Link>
         <a href="#" className="signup-btn">Sign up</a>
       </nav>
     </header>
