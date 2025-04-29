@@ -1,14 +1,29 @@
-const express = require("express");
-const app = express();
-const env = require("dotenv");
-const port = process.env.port || 8000;
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const connectDB = require('./Config/db');
+const authRoutes = require('./Routes/authRoutes');
 
-app.get("/",(req,res)=>{
-    res.status(200).json({
-        message: "hello from server"
-    })
+const app = express();
+
+
+connectDB();
+
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.json());
+
+
+app.get('/test', (req, res) => {
+    res.json({ message: 'Server is working!' });
 });
 
-app.listen(port, ()=>{
-    console.log('server is running')
+
+app.use('/api/auth', authRoutes);
+
+const PORT = 5000;  
+app.listen(PORT, '0.0.0.0', () => {    
+    console.log(`Server is running on port ${PORT}`);
 });
