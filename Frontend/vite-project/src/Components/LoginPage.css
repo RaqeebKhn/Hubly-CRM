@@ -1,17 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; 
-}
-
 
 .login-root {
     display: flex;
@@ -21,6 +7,8 @@ html, body {
     top: 0;
     left: 0;
     background: #fff;
+    overflow-y: auto;   
+  height: 100vh; 
 }
 
 
