@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './Dashboard.css';
 import hubly from '../Assets/logo.png';
@@ -11,76 +10,71 @@ import settingsIcon from '../Assets/settings.png';
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(''); 
 
   return (
     <div className="dashboard-container">
-      
-      
-<div className="sidebar">
-  <div className="logo">
-    <img src={hubly} alt="Hubly" />
-  </div>
-  <nav className="nav-items">
-    <a href="#" className="nav-item active">
-      <img src={dashboardIcon} alt="Dashboard" className="nav-icon" />
-      <span className="nav-label">Dashboard</span>
-    </a>
-    <a href="#" className="nav-item">
-      <img src={contactCentreIcon} alt="Contact Centre" className="nav-icon" />
-      <span className="nav-label">Contact Centre</span>
-    </a>
-    <a href="#" className="nav-item">
-      <img src={analyticsIcon} alt="Analytics" className="nav-icon" />
-      <span className="nav-label">Analytics</span>
-    </a>
-    <a href="#" className="nav-item">
-      <img src={chatBotIcon} alt="Chat Bot" className="nav-icon" />
-      <span className="nav-label">Chat Bot</span>
-    </a>
-    <a href="#" className="nav-item">
-      <img src={teamIcon} alt="Team" className="nav-icon" />
-      <span className="nav-label">Team</span>
-    </a>
-    <a href="#" className="nav-item">
-      <img src={settingsIcon} alt="Settings" className="nav-icon" />
-      <span className="nav-label">Settings</span>
-    </a>
-  </nav>
-</div>
+      <div className="sidebar">
+        <div className="logo">
+          <img src={hubly} alt="Hubly" />
+        </div>
+        <nav className="nav-items">
+          <a href="#" className="nav-item active">
+            <img src={dashboardIcon} alt="Dashboard" className="nav-icon" />
+            <span className="nav-label">Dashboard</span>
+          </a>
+          <a href="#" className="nav-item">
+            <img src={contactCentreIcon} alt="Contact Centre" className="nav-icon" />
+            <span className="nav-label">Contact Centre</span>
+          </a>
+          <a href="#" className="nav-item">
+            <img src={analyticsIcon} alt="Analytics" className="nav-icon" />
+            <span className="nav-label">Analytics</span>
+          </a>
+          <a href="#" className="nav-item">
+            <img src={chatBotIcon} alt="Chat Bot" className="nav-icon" />
+            <span className="nav-label">Chat Bot</span>
+          </a>
+          <a href="#" className="nav-item">
+            <img src={teamIcon} alt="Team" className="nav-icon" />
+            <span className="nav-label">Team</span>
+          </a>
+          <a href="#" className="nav-item">
+            <img src={settingsIcon} alt="Settings" className="nav-icon" />
+            <span className="nav-label">Settings</span>
+          </a>
+        </nav>
+      </div>
 
-      
       <div className="main-content">
         <h1 className="dashboard-title">Dashboard</h1>
         
-        
-                  <div className="search-container">
-            <input 
-              type="text" 
-              placeholder="Search for ticket"
-              className="search-input"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+        <div className="search-container">
+          <input 
+            type="text" 
+            placeholder="Search for ticket"
+            className="search-input"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <svg 
+            className="search-icon" 
+            width="16" 
+            height="16" 
+            viewBox="0 0 16 16" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path 
+              d="M15.25 15.25L11.8855 11.8795L15.25 15.25ZM13.75 7.375C13.75 10.8958 10.8958 13.75 7.375 13.75C3.85418 13.75 1 10.8958 1 7.375C1 3.85418 3.85418 1 7.375 1C10.8958 1 13.75 3.85418 13.75 7.375Z" 
+              stroke="#94A3B8" 
+              strokeWidth="1.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
             />
-            <svg 
-              className="search-icon" 
-              width="16" 
-              height="16" 
-              viewBox="0 0 16 16" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path 
-                d="M15.25 15.25L11.8855 11.8795L15.25 15.25ZM13.75 7.375C13.75 10.8958 10.8958 13.75 7.375 13.75C3.85418 13.75 1 10.8958 1 7.375C1 3.85418 3.85418 1 7.375 1C10.8958 1 13.75 3.85418 13.75 7.375Z" 
-                stroke="#94A3B8" 
-                strokeWidth="1.5" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
+          </svg>
+        </div>
 
-        
         <div className="tickets-section">
           <div className="ticket-tabs">
             <button 
@@ -103,7 +97,6 @@ export default function Dashboard() {
             </button>
           </div>
 
-          
           <div className="ticket-item">
             <div className="ticket-header">
               <div className="ticket-avatar">JS</div>
