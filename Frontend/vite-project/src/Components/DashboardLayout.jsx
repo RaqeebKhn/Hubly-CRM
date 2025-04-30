@@ -1,20 +1,20 @@
 import React from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import './DashboardLayout.css';
-import hubly from '../../Assets/logo.png';
-import dashboardIcon from '../../Assets/dashboard.png';
-import contactCentreIcon from '../../Assets/contact-centre.png';
-import analyticsIcon from '../../Assets/analytics.png';
-import chatBotIcon from '../../Assets/chatbot.png';
-import teamIcon from '../../Assets/team.png';
-import settingsIcon from '../../Assets/settings.png';
+import hubly from '../Assets/logo.png';
+import dashboardIcon from '../Assets/dashboard.png';
+import contactCentreIcon from '../Assets/contact-centre.png';
+import analyticsIcon from '../Assets/analytics.png';
+import chatBotIcon from '../Assets/chatbot.png';
+import teamIcon from '../Assets/team.png';
+import settingsIcon from '../Assets/settings.png';
 
 export default function DashboardLayout() {
   const navigate = useNavigate();
 
   return (
     <div className="dashboard-container">
-      {/* Sidebar */}
+      
       <div className="sidebar">
         <div className="logo">
           <img src={hubly} alt="Hubly" />

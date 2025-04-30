@@ -5,16 +5,16 @@ import Partners from './components/Partners';
 import CoreValue from './components/CoreValue';
 import FeaturesFunnel from './components/FeaturesFunnel';
 import PricingPlans from './components/PricingPlans';
-import Footer from './Components/Footer';
-import LoginPage from './Components/LoginPage';
+import Footer from './components/Footer';
+import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
-import DashboardLayout from './components/dashboard/DashboardLayout';
+import DashboardLayout from './components/DashboardLayout';
 import Dashboard from './components/Dashboard';
-import ContactCentre from './components/dashboard/ContactCentre';
-import Analytics from './components/dashboard/Analytics';
-import ChatBot from './components/dashboard/ChatBot';
-import Team from './components/dashboard/Team';
-import Settings from './components/dashboard/Settings';
+import ContactCentre from './components/ContactCentre';
+import Analytics from './components/Analytics';
+import ChatBot from './components/Chatbot';
+import Team from './components/Team';
+import Settings from './components//Settings';
 import './App.css';
 
 const ProtectedRoute = ({ children }) => {

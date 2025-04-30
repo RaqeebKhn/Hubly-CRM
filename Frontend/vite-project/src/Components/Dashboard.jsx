@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
 import hubly from '../Assets/logo.png';
-import hubly from '../Assets/logo.png';
 import dashboardIcon from '../Assets/dashboard.png';
 import contactCentreIcon from '../Assets/contact-centre.png';
 import analyticsIcon from '../Assets/analytics.png';
@@ -16,7 +15,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard-container">
       
-      {/* Sidebar */}
+      
 <div className="sidebar">
   <div className="logo">
     <img src={hubly} alt="Hubly" />
