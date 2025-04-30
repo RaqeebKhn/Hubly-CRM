@@ -8,7 +8,6 @@ import PricingPlans from './components/PricingPlans';
 import Footer from './components/Footer';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
-import DashboardLayout from './components/DashboardLayout';
 import Dashboard from './components/Dashboard';
 import ContactCentre from './components/ContactCentre';
 import Analytics from './components/Analytics';
@@ -52,7 +51,7 @@ function App() {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <DashboardLayout />
+              <Dashboard />
             </ProtectedRoute>
           }
         >
