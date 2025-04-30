@@ -98,21 +98,28 @@ export default function Dashboard() {
           </div>
 
           <div className="ticket-item">
-            <div className="ticket-header">
-              <div className="ticket-avatar">JS</div>
-              <div className="ticket-title">Ticket# 2023-00123</div>
-              <div className="ticket-time">Posted at 12:45 AM</div>
-            </div>
-            <div className="ticket-message">Hey!</div>
-            <div className="ticket-footer">
-              <div className="user-info">
-                <span className="user-name">John Snow</span>
-                <span className="user-id">1-91-000000000</span>
-                <span className="user-email">example@gmail.com</span>
-              </div>
-              <button className="open-ticket">Open Ticket</button>
-            </div>
-          </div>
+  <div className="ticket-header">
+    <div className="ticket-info">
+      <div className="ticket-title">Ticket# 2023-00123</div>
+      <div className="ticket-time">Posted at 12:45 AM</div>
+    </div>
+    <div className="ticket-duration">10:00</div>
+  </div>
+  <div className="ticket-message">Hey!</div>
+  <div className="ticket-footer">
+    <div className="user-info">
+      <div className="user-avatar">JS</div>
+      <div className="user-details">
+        <div className="user-name">John Snow</div>
+        <div className="user-meta">
+          <span className="user-id">1-91-000000000</span>
+          <span className="user-email">example@gmail.com</span>
+        </div>
+      </div>
+    </div>
+    <button className="open-ticket">Open Ticket</button>
+  </div>
+</div>
         </div>
       </div>
     </div>
