@@ -28,7 +28,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        
+        {/* Landing Page Route */}
         <Route
           path="/"
           element={
@@ -44,11 +44,11 @@ function App() {
           }
         />
 
-        
+        {/* Auth Routes */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
 
-        
+        {/* Protected Routes */}
         <Route
           path="/dashboard"
           element={
