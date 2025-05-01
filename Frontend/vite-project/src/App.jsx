@@ -13,7 +13,7 @@ import ContactCentre from './components/ContactCentre';
 import Analytics from './components/Analytics';
 import ChatBot from './components/Chatbot';
 import Team from './components/Team';
-import Settings from './components//Settings';
+import Settings from './components/Settings';
 import './App.css';
 
 const ProtectedRoute = ({ children }) => {
@@ -43,6 +43,8 @@ function App() {
             </div>
           }
         />
+
+        
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
 
@@ -54,14 +56,47 @@ function App() {
               <Dashboard />
             </ProtectedRoute>
           }
-        >
-          <Route index element={<Dashboard />} />
-          <Route path="contact-centre" element={<ContactCentre />} />
-          <Route path="analytics" element={<Analytics />} />
-          <Route path="chatbot" element={<ChatBot />} />
-          <Route path="team" element={<Team />} />
-          <Route path="settings" element={<Settings />} />
-        </Route>
+        />
+        <Route
+          path="/contact-centre"
+          element={
+            <ProtectedRoute>
+              <ContactCentre />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/analytics"
+          element={
+            <ProtectedRoute>
+              <Analytics />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/chatbot"
+          element={
+            <ProtectedRoute>
+              <ChatBot />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/team"
+          element={
+            <ProtectedRoute>
+              <Team />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <Settings />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
   );

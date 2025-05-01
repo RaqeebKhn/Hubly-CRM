@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const connectDB = require('./Config/db');
 const authRoutes = require('./Routes/authRoutes');
 const userRoutes = require('./Routes/userRoutes');
+const contactRoutes = require('./Routes/contactRoutes');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.get('/test', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/contact', contactRoutes);
 
 
 const PORT = 5000;  

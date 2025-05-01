@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Dashboard.css';
 import hubly from '../Assets/logo.png';
 import dashboardIcon from '../Assets/dashboard.png';
@@ -11,69 +12,62 @@ import settingsIcon from '../Assets/settings.png';
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [tickets, setTickets] = useState([]);
-
-  
-  useEffect(() => {
-    fetchTickets();
-  }, []);
-
-  
-  const fetchTickets = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/api/tickets', {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-      });
-      const data = await response.json();
-      if (data.success) {
-        setTickets(data.tickets);
-      }
-    } catch (error) {
-      console.error('Error fetching tickets:', error);
-    }
-  };
+  const location = useLocation();
 
   return (
     <div className="dashboard-container">
-      
       <div className="sidebar">
         <div className="logo">
           <img src={hubly} alt="Hubly" />
         </div>
         <nav className="nav-items">
-          <a href="#" className="nav-item active">
+          <Link 
+            to="/dashboard" 
+            className={`nav-item ${location.pathname === '/dashboard' ? 'active' : ''}`}
+          >
             <img src={dashboardIcon} alt="Dashboard" className="nav-icon" />
             <span className="nav-label">Dashboard</span>
-          </a>
-          <a href="#" className="nav-item">
+          </Link>
+          <Link 
+            to="/contact-centre" 
+            className={`nav-item ${location.pathname === '/contact-centre' ? 'active' : ''}`}
+          >
             <img src={contactCentreIcon} alt="Contact Centre" className="nav-icon" />
             <span className="nav-label">Contact Centre</span>
-          </a>
-          <a href="#" className="nav-item">
+          </Link>
+          <Link 
+            to="/analytics" 
+            className={`nav-item ${location.pathname === '/analytics' ? 'active' : ''}`}
+          >
             <img src={analyticsIcon} alt="Analytics" className="nav-icon" />
             <span className="nav-label">Analytics</span>
-          </a>
-          <a href="#" className="nav-item">
+          </Link>
+          <Link 
+            to="/chatbot" 
+            className={`nav-item ${location.pathname === '/chatbot' ? 'active' : ''}`}
+          >
             <img src={chatBotIcon} alt="Chat Bot" className="nav-icon" />
             <span className="nav-label">Chat Bot</span>
-          </a>
-          <a href="#" className="nav-item">
+          </Link>
+          <Link 
+            to="/team" 
+            className={`nav-item ${location.pathname === '/team' ? 'active' : ''}`}
+          >
             <img src={teamIcon} alt="Team" className="nav-icon" />
             <span className="nav-label">Team</span>
-          </a>
-          <a href="#" className="nav-item">
+          </Link>
+          <Link 
+            to="/settings" 
+            className={`nav-item ${location.pathname === '/settings' ? 'active' : ''}`}
+          >
             <img src={settingsIcon} alt="Settings" className="nav-icon" />
             <span className="nav-label">Settings</span>
-          </a>
+          </Link>
         </nav>
       </div>
 
-      
       <div className="main-content">
         <h1 className="dashboard-title">Dashboard</h1>
-        
         
         <div className="search-container">
           <input 
@@ -101,7 +95,6 @@ export default function Dashboard() {
           </svg>
         </div>
 
-        
         <div className="tickets-section">
           <div className="ticket-tabs">
             <button 
@@ -124,7 +117,6 @@ export default function Dashboard() {
             </button>
           </div>
 
-          
           <div className="ticket-item">
             <div className="ticket-header">
               <div className="ticket-info">
@@ -150,44 +142,6 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-
-          
-          {tickets.map(ticket => (
-            <div key={ticket._id} className="ticket-item">
-              <div className="ticket-header">
-                <div className="ticket-info">
-                  <div className="ticket-title">{ticket.ticketId}</div>
-                  <div className="ticket-time">
-                    {new Date(ticket.createdAt).toLocaleString()}
-                  </div>
-                </div>
-                <div className="ticket-status">
-                  <span className={`status-badge ${ticket.status}`}>
-                    {ticket.status}
-                  </span>
-                </div>
-              </div>
-              <div className="ticket-message">{ticket.message}</div>
-              <div className="ticket-footer">
-                <div className="user-info">
-                  <div className="user-avatar">
-                    {ticket.createdBy.firstName?.[0]}{ticket.createdBy.lastName?.[0]}
-                  </div>
-                  <div className="user-details">
-                    <div className="user-name">
-                      {ticket.createdBy.firstName} {ticket.createdBy.lastName}
-                    </div>
-                    <div className="user-meta">
-                      <span className="user-email">{ticket.createdBy.email}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="ticket-actions">
-                  <button className="open-ticket">Open Ticket</button>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </div>
