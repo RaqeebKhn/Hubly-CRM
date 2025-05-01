@@ -4,6 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const connectDB = require('./Config/db');
 const authRoutes = require('./Routes/authRoutes');
+const userRoutes = require('./Routes/userRoutes');
 
 const app = express();
 
@@ -22,7 +23,6 @@ app.get('/test', (req, res) => {
 
 
 app.use('/api/auth', authRoutes);
-app.use('/api/tickets', ticketRoutes);
 app.use('/api/users', userRoutes);
 
 

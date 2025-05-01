@@ -13,12 +13,12 @@ export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState('');
   const [tickets, setTickets] = useState([]);
 
-  // Fetch tickets when component mounts
+  
   useEffect(() => {
     fetchTickets();
   }, []);
 
-  // Fetch tickets from backend
+  
   const fetchTickets = async () => {
     try {
       const response = await fetch('http://localhost:5000/api/tickets', {
@@ -37,7 +37,7 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      {/* Sidebar */}
+      
       <div className="sidebar">
         <div className="logo">
           <img src={hubly} alt="Hubly" />
@@ -70,11 +70,11 @@ export default function Dashboard() {
         </nav>
       </div>
 
-      {/* Main Content */}
+      
       <div className="main-content">
         <h1 className="dashboard-title">Dashboard</h1>
         
-        {/* Search Bar */}
+        
         <div className="search-container">
           <input 
             type="text" 
@@ -101,7 +101,7 @@ export default function Dashboard() {
           </svg>
         </div>
 
-        {/* Tickets Section */}
+        
         <div className="tickets-section">
           <div className="ticket-tabs">
             <button 
@@ -124,7 +124,7 @@ export default function Dashboard() {
             </button>
           </div>
 
-          {/* Dummy Ticket */}
+          
           <div className="ticket-item">
             <div className="ticket-header">
               <div className="ticket-info">
@@ -151,7 +151,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Real Tickets */}
+          
           {tickets.map(ticket => (
             <div key={ticket._id} className="ticket-item">
               <div className="ticket-header">
