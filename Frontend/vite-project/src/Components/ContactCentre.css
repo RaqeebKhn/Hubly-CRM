@@ -10,7 +10,7 @@
     overflow: hidden;
   }
   
-  /* Dashboard Container and Sidebar */
+  
   .dashboard-container {
     display: flex;
     width: 100vw;
@@ -21,7 +21,7 @@
     padding: 0;
   }
   
-  /* Main Navigation Sidebar */
+  
   .sidebar {
     width: 80px;
     min-width: 80px;
@@ -102,14 +102,14 @@
     font-weight: 500;
   }
   
-  /* Main Content Area */
+  
   .main-content {
     flex: 1;
     overflow: hidden;
     background-color: transparent;
   }
   
-  /* Contact Center Container */
+  
   .contact-center-container {
     display: flex;
     height: 100%;
@@ -118,7 +118,7 @@
     padding: 0;
   }
   
-  /* Contact Sidebar (Chat List) */
+  
   .contact-sidebar {
     width: 240px;
     min-width: 240px;
@@ -204,7 +204,7 @@
     line-height: 1.2;
   }
   
-  /* Chat Area */
+  
   .chat-area {
     flex: 1;
     display: flex;
@@ -335,7 +335,7 @@
     justify-content: center;
   }
   
-  /* Details Sidebar */
+  
   .details-sidebar {
     width: 300px;
     min-width: 300px;
@@ -461,7 +461,7 @@
     background-color: #f9fafb;
   }
   
-  /* Status Dropdown */
+  
   .status-dropdown {
     position: absolute;
     top: 100%;
@@ -487,7 +487,7 @@
     background: #f3f4f6;
   }
   
-  /* Teammates Dropdown */
+  
   .teammates-dropdown {
     position: absolute;
     top: 100%;
@@ -528,7 +528,7 @@
     border-bottom-right-radius: 8px;
   }
   
-  /* Popup Styles */
+  
   .popup-overlay {
     position: absolute;
     top: calc(100% + 4px);

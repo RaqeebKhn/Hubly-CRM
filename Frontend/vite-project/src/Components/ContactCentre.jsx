@@ -12,12 +12,12 @@ import userIcon from '../Assets/user.png';
 import phoneIcon from '../Assets/phone.png';
 import emailIcon from '../Assets/email.png';
 import ticketIcon from '../Assets/ticket.png';
-import joeDoeAvatar from '../Assets/joe-doe.png'; // Joe Doe's avatar
-import chat1Avatar from '../Assets/chat1.png';    // Chat 1's avatar
-import chat2Avatar from '../Assets/chat2.png';    // Chat 2's avatar
+import joeDoeAvatar from '../Assets/joe-doe.png'; 
+import chat1Avatar from '../Assets/chat1.png';    
+import chat2Avatar from '../Assets/chat2.png';    
 
 export default function ContactCentre() {
-  // Chat data
+  
   const chats = [
     {
       id: 1,
@@ -33,10 +33,10 @@ export default function ContactCentre() {
     }
   ];
 
-  // State for which chat is selected
+  
   const [selectedChat, setSelectedChat] = useState(1);
 
-  // State for messages per chat
+  
   const [chatMessages, setChatMessages] = useState({
     1: [
       {
@@ -58,13 +58,13 @@ export default function ContactCentre() {
     ]
   });
 
-  // State for input per chat
+  
   const [messageInputs, setMessageInputs] = useState({
     1: '',
     2: ''
   });
 
-  // Other states (unchanged)
+  
   const [showTeamDropdown, setShowTeamDropdown] = useState(false);
   const [showConfirmationPopup, setShowConfirmationPopup] = useState(false);
   const [selectedTeammate, setSelectedTeammate] = useState(null);
@@ -74,11 +74,11 @@ export default function ContactCentre() {
   const [chatReassigned, setChatReassigned] = useState(false);
   const location = useLocation();
 
-  // Refs for outside click
+  
   const teamDropdownRef = useRef(null);
   const statusDropdownRef = useRef(null);
 
-  // Close dropdowns on outside click
+  
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -109,7 +109,7 @@ export default function ContactCentre() {
     status: 'Open'
   };
 
-  // Teammate dropdown handlers
+  
   const handleTeamDropdownClick = () => {
     setShowTeamDropdown(!showTeamDropdown);
   };
@@ -124,7 +124,7 @@ export default function ContactCentre() {
     chatDetails.teammates[0] = selectedTeammate;
     setShowConfirmationPopup(false);
     setSelectedTeammate(null);
-    setChatReassigned(true); // Mark chat as reassigned
+    setChatReassigned(true); 
   };
 
   const handleCancelTeammate = () => {
@@ -132,7 +132,7 @@ export default function ContactCentre() {
     setSelectedTeammate(null);
   };
 
-  // Ticket status dropdown handlers
+  
   const handleStatusDropdownClick = () => {
     setShowStatusDropdown(!showStatusDropdown);
   };
@@ -149,7 +149,7 @@ export default function ContactCentre() {
     setShowStatusPopup(false);
   };
 
-  // Chat send handler
+  
   const handleSend = () => {
     const msg = messageInputs[selectedChat];
     if (!msg || msg.trim() === '') return;
@@ -172,7 +172,7 @@ export default function ContactCentre() {
     });
   };
 
-  // Handle input change per chat
+  
   const handleInputChange = (e) => {
     setMessageInputs({
       ...messageInputs,
@@ -180,18 +180,18 @@ export default function ContactCentre() {
     });
   };
 
-  // Handle chat selection
+  
   const handleChatSelect = (id) => {
     setSelectedChat(id);
-    setChatReassigned(false); // Reset reassigned state when switching chats
+    setChatReassigned(false); 
   };
 
-  // Get current chat's avatar for details area
+  
   const currentChat = chats.find(c => c.id === selectedChat);
 
   return (
     <div className="dashboard-container">
-      {/* Navigation Sidebar */}
+      
       <div className="sidebar">
         <div className="logo">
           <img src={hubly} alt="Hubly" />
@@ -242,10 +242,10 @@ export default function ContactCentre() {
         </nav>
       </div>
 
-      {/* Main Content */}
+      
       <div className="main-content">
         <div className="contact-center-container">
-          {/* Contact Sidebar */}
+          
           <div className="contact-sidebar">
             <div className="contact-header">
               <h2>Contact Center</h2>
@@ -273,7 +273,7 @@ export default function ContactCentre() {
             </div>
           </div>
 
-          {/* Chat Area */}
+          
           <div className="chat-area">
             <div className="chat-header">
               <h3>Ticket# {chatDetails.ticketId}</h3>
@@ -339,7 +339,7 @@ export default function ContactCentre() {
             )}
           </div>
 
-          {/* Details Sidebar */}
+          
           <div className="details-sidebar">
             <div className="details-header">
               <img src={currentChat.avatar} alt={currentChat.name} className="user-avatar" />
