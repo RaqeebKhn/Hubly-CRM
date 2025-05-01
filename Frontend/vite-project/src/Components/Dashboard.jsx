@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import hubly from '../Assets/logo.png';
 import dashboardIcon from '../Assets/dashboard.png';
@@ -10,10 +10,34 @@ import settingsIcon from '../Assets/settings.png';
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('all');
-  const [searchQuery, setSearchQuery] = useState(''); 
+  const [searchQuery, setSearchQuery] = useState('');
+  const [tickets, setTickets] = useState([]);
+
+  // Fetch tickets when component mounts
+  useEffect(() => {
+    fetchTickets();
+  }, []);
+
+  // Fetch tickets from backend
+  const fetchTickets = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/tickets', {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      const data = await response.json();
+      if (data.success) {
+        setTickets(data.tickets);
+      }
+    } catch (error) {
+      console.error('Error fetching tickets:', error);
+    }
+  };
 
   return (
     <div className="dashboard-container">
+      {/* Sidebar */}
       <div className="sidebar">
         <div className="logo">
           <img src={hubly} alt="Hubly" />
@@ -46,9 +70,11 @@ export default function Dashboard() {
         </nav>
       </div>
 
+      {/* Main Content */}
       <div className="main-content">
         <h1 className="dashboard-title">Dashboard</h1>
         
+        {/* Search Bar */}
         <div className="search-container">
           <input 
             type="text" 
@@ -75,6 +101,7 @@ export default function Dashboard() {
           </svg>
         </div>
 
+        {/* Tickets Section */}
         <div className="tickets-section">
           <div className="ticket-tabs">
             <button 
@@ -97,29 +124,70 @@ export default function Dashboard() {
             </button>
           </div>
 
+          {/* Dummy Ticket */}
           <div className="ticket-item">
-  <div className="ticket-header">
-    <div className="ticket-info">
-      <div className="ticket-title">Ticket# 2023-00123</div>
-      <div className="ticket-time">Posted at 12:45 AM</div>
-    </div>
-    <div className="ticket-duration">10:00</div>
-  </div>
-  <div className="ticket-message">Hey!</div>
-  <div className="ticket-footer">
-    <div className="user-info">
-      <div className="user-avatar">JS</div>
-      <div className="user-details">
-        <div className="user-name">John Snow</div>
-        <div className="user-meta">
-          <span className="user-id">1-91-000000000</span>
-          <span className="user-email">example@gmail.com</span>
-        </div>
-      </div>
-    </div>
-    <button className="open-ticket">Open Ticket</button>
-  </div>
-</div>
+            <div className="ticket-header">
+              <div className="ticket-info">
+                <div className="ticket-title">Ticket# 2023-00123</div>
+                <div className="ticket-time">Posted at 12:45 AM</div>
+              </div>
+              <div className="ticket-duration">10:00</div>
+            </div>
+            <div className="ticket-message">Hey!</div>
+            <div className="ticket-footer">
+              <div className="user-info">
+                <div className="user-avatar">JS</div>
+                <div className="user-details">
+                  <div className="user-name">John Snow</div>
+                  <div className="user-meta">
+                    <span className="user-id">1-91-000000000</span>
+                    <span className="user-email">example@gmail.com</span>
+                  </div>
+                </div>
+              </div>
+              <div className="ticket-actions">
+                <button className="open-ticket">Open Ticket</button>
+              </div>
+            </div>
+          </div>
+
+          {/* Real Tickets */}
+          {tickets.map(ticket => (
+            <div key={ticket._id} className="ticket-item">
+              <div className="ticket-header">
+                <div className="ticket-info">
+                  <div className="ticket-title">{ticket.ticketId}</div>
+                  <div className="ticket-time">
+                    {new Date(ticket.createdAt).toLocaleString()}
+                  </div>
+                </div>
+                <div className="ticket-status">
+                  <span className={`status-badge ${ticket.status}`}>
+                    {ticket.status}
+                  </span>
+                </div>
+              </div>
+              <div className="ticket-message">{ticket.message}</div>
+              <div className="ticket-footer">
+                <div className="user-info">
+                  <div className="user-avatar">
+                    {ticket.createdBy.firstName?.[0]}{ticket.createdBy.lastName?.[0]}
+                  </div>
+                  <div className="user-details">
+                    <div className="user-name">
+                      {ticket.createdBy.firstName} {ticket.createdBy.lastName}
+                    </div>
+                    <div className="user-meta">
+                      <span className="user-email">{ticket.createdBy.email}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="ticket-actions">
+                  <button className="open-ticket">Open Ticket</button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

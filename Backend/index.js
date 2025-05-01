@@ -22,6 +22,9 @@ app.get('/test', (req, res) => {
 
 
 app.use('/api/auth', authRoutes);
+app.use('/api/tickets', ticketRoutes);
+app.use('/api/users', userRoutes);
+
 
 const PORT = 5000;  
 app.listen(PORT, '0.0.0.0', () => {    
