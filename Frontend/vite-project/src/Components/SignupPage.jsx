@@ -4,6 +4,8 @@ import "./SignupPage.css";
 import signupImg from "../Assets/loginhero.png";
 import hubly from '../Assets/logo.png';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export default function SignupPage() {
   const navigate = useNavigate();
   
@@ -37,7 +39,7 @@ export default function SignupPage() {
     }
 
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/api/auth/signup`, {
+      const response = await fetch(`${API_BASE_URL}/api/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
