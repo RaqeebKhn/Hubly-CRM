@@ -4,7 +4,7 @@ import loginhero from '../Assets/loginhero.png'
 import hubly from '../Assets/logo.png';
 import { useState } from 'react';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = import.meta.env.BACKEND_URL;
 
 export default function LoginPage() { 
   const navigate = useNavigate();
