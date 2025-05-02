@@ -30,3 +30,5 @@ const contactSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Contact', contactSchema);
+
+// verify this b4 submission

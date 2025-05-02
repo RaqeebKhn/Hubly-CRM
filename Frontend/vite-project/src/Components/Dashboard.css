@@ -1,4 +1,4 @@
-/* Reset default margins and padding */
+
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +20,7 @@ body {
   position: relative;
 }
 
-/* Sidebar */
+
 .sidebar {
   width: 120px;
   background: #fff;
@@ -96,7 +96,7 @@ body {
   opacity: 1;
 }
 
-/* Main content area */
+
 .main-content {
   flex: 1;
   margin-left: 120px;
@@ -112,7 +112,7 @@ body {
   width: calc(100vw - 250px);
 }
 
-/* Dashboard title */
+
 .dashboard-title {
   font-size: 24px;
   font-weight: 600;
@@ -120,7 +120,7 @@ body {
   color: #1a1a1a;
 }
 
-/* Search container */
+
 .search-container {
   margin-bottom: 24px;
   position: relative;
@@ -158,7 +158,7 @@ body {
   pointer-events: none;
 }
 
-/* Tickets section */
+
 .tickets-section {
   background: #fff;
   border-radius: 12px;
@@ -199,7 +199,7 @@ body {
   background: #2563eb;
 }
 
-/* Ticket item - Updated styles */
+
 .ticket-item {
   background: #FFFFFF;
   border: 1px solid #E5E7EB;
@@ -307,7 +307,6 @@ body {
   background: #1D4ED8;
 }
 
-/* Create Ticket Form */
 .create-ticket-form {
   background: white;
   padding: 24px;

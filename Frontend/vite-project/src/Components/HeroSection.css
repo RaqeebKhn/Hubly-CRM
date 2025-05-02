@@ -38,11 +38,11 @@
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 1.2rem;
-    color: #1a2b3b;
+    color: #184E7F;
   }
   
   .hubly-highlight {
-    color: #2563eb;
+    color: #184E7F;
   }
   
   .hero-desc {
@@ -59,7 +59,7 @@
   }
   
   .hero-btn-primary {
-    background: #2563eb;
+    background: #184E7F;
     color: #fff;
     border: none;
     padding: 0.9rem 2.2rem;
@@ -77,8 +77,8 @@
   
   .hero-btn-secondary {
     background: #fff;
-    color: #2563eb;
-    border: 1.5px solid #2563eb;
+    color: #184E7F;
+    border: 1.5px solid #184E7F;
     padding: 0.9rem 1.8rem;
     border-radius: 8px;
     font-size: 1.1rem;
