@@ -1,20 +1,20 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import Partners from './components/Partners';
-import CoreValue from './components/CoreValue';
-import FeaturesFunnel from './components/FeaturesFunnel';
-import PricingPlans from './components/PricingPlans';
-import Footer from './components/Footer';
-import LoginPage from './components/LoginPage';
-import SignupPage from './components/SignupPage';
-import Dashboard from './components/Dashboard';
-import ContactCentre from './components/ContactCentre';
-import Analytics from './components/Analytics';
-import ChatBot from './components/Chatbot';
-import Team from './components/Team';
-import Settings from './components/Settings';
-import ChatbotWidget from './components/ChatbotWidget'; 
+import Header from './components/Header.jsx';
+import HeroSection from './components/HeroSection.jsx';
+import Partners from './components/Partners.jsx';
+import CoreValue from './components/CoreValue.jsx';
+import FeaturesFunnel from './components/FeaturesFunnel.jsx';
+import PricingPlans from './components/PricingPlans.jsx';
+import Footer from './components/Footer.jsx';
+import LoginPage from './components/LoginPage.jsx';
+import SignupPage from './components/SignupPage.jsx';
+import Dashboard from './components/Dashboard.jsx';
+import ContactCentre from './components/ContactCentre.jsx';
+import Analytics from './components/Analytics.jsx';
+import ChatBot from './components/Chatbot.jsx';
+import Team from './components/Team.jsx';
+import Settings from './components/Settings.jsx';
+import ChatbotWidget from './components/ChatbotWidget.jsx'; 
 import './App.css';
 
 const ProtectedRoute = ({ children }) => {
