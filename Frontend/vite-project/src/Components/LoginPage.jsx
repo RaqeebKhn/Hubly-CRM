@@ -4,7 +4,7 @@ import loginhero from '../Assets/loginhero.png'
 import hubly from '../Assets/logo.png';
 import { useState } from 'react';
 
-const API_BASE_URL = import.meta.env.BACKEND_URL;
+const API_BASE_URL = "https://hubly-crm-cu87.onrender.com";
 
 export default function LoginPage() { 
   const navigate = useNavigate();

@@ -4,7 +4,7 @@ import "./SignupPage.css";
 import signupImg from "../Assets/loginhero.png";
 import hubly from '../Assets/logo.png';
 
-const API_BASE_URL = import.meta.env.BACKEND_URL;
+const API_BASE_URL = "https://hubly-crm-cu87.onrender.com";
 
 export default function SignupPage() {
   const navigate = useNavigate();
