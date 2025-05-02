@@ -1,20 +1,20 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Header from './components/Header.jsx';
-import HeroSection from './components/HeroSection.jsx';
-import Partners from './components/Partners.jsx';
-import CoreValue from './components/CoreValue.jsx';
-import FeaturesFunnel from './components/FeaturesFunnel.jsx';
-import PricingPlans from './components/PricingPlans.jsx';
-import Footer from './components/Footer.jsx';
-import LoginPage from './components/LoginPage.jsx';
-import SignupPage from './components/SignupPage.jsx';
-import Dashboard from './components/Dashboard.jsx';
-import ContactCentre from './components/ContactCentre.jsx';
-import Analytics from './components/Analytics.jsx';
-import ChatBot from './components/Chatbot.jsx';
-import Team from './components/Team.jsx';
-import Settings from './components/Settings.jsx';
-import ChatbotWidget from './components/ChatbotWidget.jsx'; 
+import Header from './Components/Header.jsx';
+import HeroSection from './Components/HeroSection.jsx';
+import Partners from './Components/Partners.jsx';
+import CoreValue from './Components/CoreValue.jsx';
+import FeaturesFunnel from './Components/FeaturesFunnel.jsx';
+import PricingPlans from './Components/PricingPlans.jsx';
+import Footer from './Components/Footer.jsx';
+import LoginPage from './Components/LoginPage.jsx';
+import SignupPage from './Components/SignupPage.jsx';
+import Dashboard from './Components/Dashboard.jsx';
+import ContactCentre from './Components/ContactCentre.jsx';
+import Analytics from './Components/Analytics.jsx';
+import ChatBot from './Components/Chatbot.jsx';
+import Team from './Components/Team.jsx';
+import Settings from './Components/Settings.jsx';
+import ChatbotWidget from './Components/ChatbotWidget.jsx'; 
 import './App.css';
 
 const ProtectedRoute = ({ children }) => {
