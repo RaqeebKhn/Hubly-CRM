@@ -1,0 +1,141 @@
+/* Sidebar and main-content styles are inherited from Dashboard.css */
+
+.settings-main-content {
+  background: #f8f9fb;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 0;
+}
+
+.settings-card {
+  background: #fafbfc;
+  border-radius: 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  padding: 40px 48px 32px 48px;
+  min-width: 600px;
+  max-width: 900px;
+  width: 100%;
+  margin-top: 0;
+}
+
+.settings-tabs {
+  display: flex;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 32px;
+}
+
+.settings-tab {
+  padding: 0 24px 12px 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1e3353;
+  border-bottom: 2.5px solid transparent;
+  cursor: pointer;
+}
+
+.settings-tab.active {
+  color: #1e3353;
+  border-bottom: 2.5px solid #1e3353;
+  font-weight: 600;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.settings-form label {
+  font-size: 1.08rem;
+  color: #444;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.settings-form input {
+  padding: 14px 18px;
+  border: 1.5px solid #b0b3b8;
+  border-radius: 12px;
+  font-size: 1.08rem;
+  background: #fff;
+  color: #222;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.settings-form input:focus {
+  border: 1.5px solid #2563eb;
+  background: #fff;
+}
+
+.info-row {
+  position: relative;
+}
+
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.info-icon svg {
+  display: block;
+}
+
+.tooltip {
+  position: absolute;
+  left: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  color: #444;
+  font-size: 0.98rem;
+  padding: 10px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  white-space: nowrap;
+  z-index: 10;
+  min-width: 180px;
+}
+
+.settings-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.settings-save-btn {
+  background: #1e3353;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 48px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.settings-save-btn:hover {
+  background: #2563eb;
+}
+
+@media (max-width: 800px) {
+  .settings-card {
+    min-width: 0;
+    padding: 24px 8px 24px 8px;
+  }
+}

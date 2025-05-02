@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Chatbot.css';
-import chatbotIcon from '../Assets/chatbot.png';
+import hubly from '../Assets/logo.png';
+import dashboardIcon from '../Assets/dashboard.png';
+import contactCentreIcon from '../Assets/contact-centre.png';
+import analyticsIcon from '../Assets/analytics.png';
+import chatBotIcon from '../Assets/chatbot.png';
+import teamIcon from '../Assets/team.png';
+import settingsIcon from '../Assets/settings.png';
 
 export default function Chatbot() {
-  // State for customization
+  const location = useLocation();
+
   const [headerColor, setHeaderColor] = useState('#33475B');
   const [bgColor, setBgColor] = useState('#EEEEEE');
   const [messages, setMessages] = useState(['How can I help you?', 'Ask me anything!']);
@@ -18,30 +26,24 @@ export default function Chatbot() {
   const [editingWelcome, setEditingWelcome] = useState(false);
   const [missedTimer, setMissedTimer] = useState({ h: 12, m: 9, s: 59 });
 
-  // Color options
   const headerColors = ['#fff', '#000', '#33475B'];
   const bgColors = ['#fff', '#000', '#EEEEEE'];
 
-  // Handlers for color pickers
   const handleHeaderColor = (color) => setHeaderColor(color);
   const handleBgColor = (color) => setBgColor(color);
 
-  // Handlers for messages
   const handleEditMsg = (idx) => setEditingMsg(editingMsg.map((e, i) => i === idx ? true : e));
   const handleMsgChange = (idx, value) => setMessages(messages.map((m, i) => i === idx ? value : m));
   const handleMsgBlur = (idx) => setEditingMsg(editingMsg.map((e, i) => i === idx ? false : e));
 
-  // Handlers for form
   const handleEditForm = (field) => setEditingForm({ ...editingForm, [field]: true });
   const handleFormChange = (field, value) => setForm({ ...form, [field]: value });
   const handleFormBlur = (field) => setEditingForm({ ...editingForm, [field]: false });
 
-  // Handlers for welcome message
   const handleEditWelcome = () => setEditingWelcome(true);
   const handleWelcomeChange = (value) => setWelcomeMsg(value);
   const handleWelcomeBlur = () => setEditingWelcome(false);
 
-  // Handlers for timer
   const handleTimerChange = (field, value) => {
     let v = value.replace(/\D/g, '');
     if (v.length > 2) v = v.slice(0, 2);
@@ -50,9 +52,32 @@ export default function Chatbot() {
 
   return (
     <div className="chatbot-customization-page">
-      <div className="chatbot-sidebar"></div>
+      <div className="sidebar">
+        <div className="logo">
+          <img src={hubly} alt="Hubly" />
+        </div>
+        <nav className="nav-items">
+          <Link to="/dashboard" className={location.pathname === "/dashboard" ? "active" : ""}>
+            <img src={dashboardIcon} alt="Dashboard" />
+          </Link>
+          <Link to="/contact-centre" className={location.pathname === "/contact-centre" ? "active" : ""}>
+            <img src={contactCentreIcon} alt="Contact Centre" />
+          </Link>
+          <Link to="/analytics" className={location.pathname === "/analytics" ? "active" : ""}>
+            <img src={analyticsIcon} alt="Analytics" />
+          </Link>
+          <Link to="/chatbot" className={location.pathname === "/chatbot" ? "active" : ""}>
+            <img src={chatBotIcon} alt="Chat Bot" />
+          </Link>
+          <Link to="/team" className={location.pathname === "/team" ? "active" : ""}>
+            <img src={teamIcon} alt="Team" />
+          </Link>
+          <Link to="/settings" className={location.pathname === "/settings" ? "active" : ""}>
+            <img src={settingsIcon} alt="Settings" />
+          </Link>
+        </nav>
+      </div>
 
-      {/* Center: Chatbot Preview */}
       <div className="chatbot-preview-area">
         <div
           className="chatbot-preview"
@@ -70,7 +95,7 @@ export default function Chatbot() {
               color: '#fff'
             }}
           >
-            <img src={chatbotIcon} alt="Hubly" className="chatbot-preview-logo" />
+            <img src={chatBotIcon} alt="Hubly" className="chatbot-preview-logo" />
             <span className="chatbot-preview-title">Hubly</span>
           </div>
           <div className="chatbot-preview-body" style={{ color: '#1a2b3b' }}>
@@ -101,14 +126,13 @@ export default function Chatbot() {
         </div>
         <div className="chatbot-preview-welcome">
           <div className="chatbot-message">
-            <span role="img" aria-label="robot" className="chatbot-emoji"></span>
+            <span role="img" aria-label="robot" className="chatbot-emoji">🤖</span>
             <span>{welcomeMsg}</span>
             <span className="chatbot-message-close">×</span>
           </div>
         </div>
       </div>
 
-      {/* Right: Customization Cards */}
       <div className="chatbot-customization-cards">
         {/* Header Color */}
         <div className="chatbot-card">
@@ -199,7 +223,7 @@ export default function Chatbot() {
           <div className="chatbot-card-title">Welcome Message</div>
           <div className="chatbot-welcome-preview">
             <div className="chatbot-message">
-              <span role="img" aria-label="robot" className="chatbot-emoji"></span>
+              <span role="img" aria-label="robot" className="chatbot-emoji">🤖</span>
               {editingWelcome ? (
                 <input
                   className="chatbot-custom-message-input"
