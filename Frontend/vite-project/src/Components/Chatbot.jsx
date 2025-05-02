@@ -3,7 +3,7 @@ import './Chatbot.css';
 import chatbotIcon from '../Assets/chatbot.png';
 
 export default function Chatbot() {
- 
+  // State for customization
   const [headerColor, setHeaderColor] = useState('#33475B');
   const [bgColor, setBgColor] = useState('#EEEEEE');
   const [messages, setMessages] = useState(['How can I help you?', 'Ask me anything!']);
@@ -17,32 +17,31 @@ export default function Chatbot() {
   const [welcomeMsg, setWelcomeMsg] = useState("👋 Want to chat about Hubly? I'm a chatbot here to help you find your way.");
   const [editingWelcome, setEditingWelcome] = useState(false);
   const [missedTimer, setMissedTimer] = useState({ h: 12, m: 9, s: 59 });
-  const [editingTimer, setEditingTimer] = useState(false);
 
-  
+  // Color options
   const headerColors = ['#fff', '#000', '#33475B'];
   const bgColors = ['#fff', '#000', '#EEEEEE'];
 
-  
+  // Handlers for color pickers
   const handleHeaderColor = (color) => setHeaderColor(color);
   const handleBgColor = (color) => setBgColor(color);
 
- 
+  // Handlers for messages
   const handleEditMsg = (idx) => setEditingMsg(editingMsg.map((e, i) => i === idx ? true : e));
   const handleMsgChange = (idx, value) => setMessages(messages.map((m, i) => i === idx ? value : m));
   const handleMsgBlur = (idx) => setEditingMsg(editingMsg.map((e, i) => i === idx ? false : e));
 
-  
+  // Handlers for form
   const handleEditForm = (field) => setEditingForm({ ...editingForm, [field]: true });
   const handleFormChange = (field, value) => setForm({ ...form, [field]: value });
   const handleFormBlur = (field) => setEditingForm({ ...editingForm, [field]: false });
 
-  
+  // Handlers for welcome message
   const handleEditWelcome = () => setEditingWelcome(true);
   const handleWelcomeChange = (value) => setWelcomeMsg(value);
   const handleWelcomeBlur = () => setEditingWelcome(false);
 
- 
+  // Handlers for timer
   const handleTimerChange = (field, value) => {
     let v = value.replace(/\D/g, '');
     if (v.length > 2) v = v.slice(0, 2);
@@ -53,29 +52,48 @@ export default function Chatbot() {
     <div className="chatbot-customization-page">
       <div className="chatbot-sidebar"></div>
 
-      
+      {/* Center: Chatbot Preview */}
       <div className="chatbot-preview-area">
-        <div className="chatbot-preview" style={{ background: bgColor }}>
-          <div className="chatbot-preview-header" style={{ background: headerColor }}>
+        <div
+          className="chatbot-preview"
+          style={{
+            background: bgColor,
+            border: '1px solid #e5e7eb',
+            boxShadow: '0 2px 16px rgba(37,99,235,0.18)',
+            borderRadius: '16px'
+          }}
+        >
+          <div
+            className="chatbot-preview-header"
+            style={{
+              background: headerColor,
+              color: '#fff'
+            }}
+          >
             <img src={chatbotIcon} alt="Hubly" className="chatbot-preview-logo" />
             <span className="chatbot-preview-title">Hubly</span>
           </div>
-          <div className="chatbot-preview-body">
-            <div className="chatbot-preview-message">{messages[0]}</div>
-            <div className="chatbot-preview-message">{messages[1]}</div>
-            <div className="chatbot-preview-form">
+          <div className="chatbot-preview-body" style={{ color: '#1a2b3b' }}>
+            <div className="chatbot-preview-message" style={{ color: '#1a2b3b', background: '#fff' }}>{messages[0]}</div>
+            <div className="chatbot-preview-message" style={{ color: '#1a2b3b', background: '#fff' }}>{messages[1]}</div>
+            <div className="chatbot-preview-form" style={{ color: '#1a2b3b', background: '#fff' }}>
               <div className="chatbot-preview-form-title">Introduction Yourself</div>
               <div className="chatbot-preview-form-label">Your name</div>
-              <div className="chatbot-preview-form-value">{form.name}</div>
+              <div className="chatbot-preview-form-value" style={{ color: '#33475B' }}>{form.name}</div>
               <div className="chatbot-preview-form-label">Your Phone</div>
-              <div className="chatbot-preview-form-value">{form.phone}</div>
+              <div className="chatbot-preview-form-value" style={{ color: '#33475B' }}>{form.phone}</div>
               <div className="chatbot-preview-form-label">Your Email</div>
-              <div className="chatbot-preview-form-value">{form.email}</div>
+              <div className="chatbot-preview-form-value" style={{ color: '#33475B' }}>{form.email}</div>
               <button className="chatbot-preview-form-btn">Thank You!</button>
             </div>
           </div>
           <div className="chatbot-preview-input-row">
-            <input type="text" placeholder="Write a message" disabled />
+            <input
+              type="text"
+              placeholder="Write a message"
+              disabled
+              style={{ background: '#fff', color: '#1a2b3b' }}
+            />
             <button className="chatbot-preview-send-btn" disabled>
               <svg width="20" height="20" fill="#2563eb" viewBox="0 0 20 20"><path d="M2.94 17.94a1.5 1.5 0 0 0 1.6.33l13-5.5a1.5 1.5 0 0 0 0-2.74l-13-5.5A1.5 1.5 0 0 0 2 6.5v11a1.5 1.5 0 0 0 .94 1.44zM4 7.38l11.67 4.94L4 17.26V7.38z"/></svg>
             </button>
@@ -83,23 +101,23 @@ export default function Chatbot() {
         </div>
         <div className="chatbot-preview-welcome">
           <div className="chatbot-message">
-            <span role="img" aria-label="robot" className="chatbot-emoji">🤖</span>
+            <span role="img" aria-label="robot" className="chatbot-emoji"></span>
             <span>{welcomeMsg}</span>
             <span className="chatbot-message-close">×</span>
           </div>
         </div>
       </div>
 
-      
+      {/* Right: Customization Cards */}
       <div className="chatbot-customization-cards">
-        
+        {/* Header Color */}
         <div className="chatbot-card">
           <div className="chatbot-card-title">Header Color</div>
-          <div className="chatbot-color-options">
+          <div className="chatbot-color-options header-color-options">
             {headerColors.map((color) => (
               <div
                 key={color}
-                className={`color-circle${headerColor === color ? ' selected' : ''}`}
+                className={`color-circle header-color-circle${headerColor === color ? ' selected' : ''}`}
                 style={{ background: color }}
                 onClick={() => handleHeaderColor(color)}
               ></div>
@@ -107,14 +125,14 @@ export default function Chatbot() {
             <input className="color-input" value={headerColor} readOnly />
           </div>
         </div>
-        
+        {/* Background Color */}
         <div className="chatbot-card">
           <div className="chatbot-card-title">Custom Background Color</div>
-          <div className="chatbot-color-options">
+          <div className="chatbot-color-options bg-color-options">
             {bgColors.map((color) => (
               <div
                 key={color}
-                className={`color-circle${bgColor === color ? ' selected' : ''}`}
+                className={`color-circle bg-color-circle${bgColor === color ? ' selected' : ''}`}
                 style={{ background: color }}
                 onClick={() => handleBgColor(color)}
               ></div>
@@ -122,7 +140,7 @@ export default function Chatbot() {
             <input className="color-input" value={bgColor} readOnly />
           </div>
         </div>
-        
+        {/* Customize Message */}
         <div className="chatbot-card">
           <div className="chatbot-card-title">Customize Message</div>
           {[0, 1].map((idx) => (
@@ -147,7 +165,7 @@ export default function Chatbot() {
             </div>
           ))}
         </div>
-        
+        {/* Introduction Form */}
         <div className="chatbot-card">
           <div className="chatbot-card-title">Introduction Form</div>
           <div className="chatbot-form-preview">
@@ -176,12 +194,12 @@ export default function Chatbot() {
             <button className="chatbot-form-btn">Thank You!</button>
           </div>
         </div>
-        
+        {/* Welcome Message */}
         <div className="chatbot-card">
           <div className="chatbot-card-title">Welcome Message</div>
           <div className="chatbot-welcome-preview">
             <div className="chatbot-message">
-              <span role="img" aria-label="robot" className="chatbot-emoji">🤖</span>
+              <span role="img" aria-label="robot" className="chatbot-emoji"></span>
               {editingWelcome ? (
                 <input
                   className="chatbot-custom-message-input"

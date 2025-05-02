@@ -24,18 +24,18 @@
     width: 340px;
     border-radius: 16px;
     box-shadow: 0 2px 16px rgba(37,99,235,0.18);
-    background: #fff;
     margin-bottom: 2.5rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    border: 1px solid #e5e7eb;
   }
   
   .chatbot-preview-header {
     display: flex;
     align-items: center;
     background: #33475B;
-    color: #fff;
+    color: #fff !important;
     padding: 0.7rem 1rem;
   }
   
@@ -55,16 +55,17 @@
   
   .chatbot-preview-body {
     padding: 1.2rem;
-    background: #f7fafd;
+    background: transparent;
     min-height: 120px;
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
+    color: #1a2b3b !important;
   }
   
   .chatbot-preview-message {
     background: #fff;
-    color: #33475B;
+    color: #1a2b3b;
     border-radius: 8px;
     padding: 0.7rem 1rem;
     margin-bottom: 0.5rem;
@@ -73,11 +74,12 @@
   }
   
   .chatbot-preview-form {
-    background: #fff;
+    background: transparent;
     border-radius: 12px;
     box-shadow: 0 1px 4px rgba(37,99,235,0.06);
     padding: 1rem;
     margin-top: 0.7rem;
+    color: #1a2b3b !important;
   }
   
   .chatbot-preview-form-title {
@@ -87,19 +89,27 @@
   
   .chatbot-preview-form-label {
     font-size: 0.95rem;
-    color: #1a2b3b;
+    color: #1a2b3b !important;
     margin-top: 0.5rem;
   }
   
   .chatbot-preview-form-value {
+    background: #fff !important;
+    color: #1a2b3b !important;
+    border: 1px solid #c3d3e2;
+    border-radius: 6px;
+    padding: 0.5rem 0.7rem;
     font-size: 1rem;
-    color: #33475B;
     margin-bottom: 0.2rem;
+    box-shadow: 0 1px 4px rgba(37,99,235,0.06);
+    min-height: 2.2rem;
+    display: flex;
+    align-items: center;
   }
   
   .chatbot-preview-form-btn {
     margin-top: 0.7rem;
-    background: #2563eb;
+    background: #184E7F;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -129,7 +139,9 @@
     border: 1px solid #c3d3e2;
     border-radius: 8px;
     font-size: 1rem;
-    background: #f7fafd;
+    background: #fff !important;
+    color: #1a2b3b !important;
+    box-shadow: 0 1px 4px rgba(37,99,235,0.06);
   }
   
   .chatbot-preview-send-btn {
@@ -192,6 +204,7 @@
     font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 1rem;
+    color: #000;
   }
   
   .chatbot-color-options {
@@ -208,7 +221,11 @@
     cursor: pointer;
   }
   
-  .color-circle.selected {
+  .header-color-circle.selected {
+    border: 3px solid #2563eb;
+  }
+  
+  .bg-color-circle.selected {
     border: 3px solid #2563eb;
   }
   
@@ -236,6 +253,7 @@
     padding: 0.5rem 1rem;
     border-radius: 8px;
     font-size: 1rem;
+    color: #1a2b3b;
   }
   
   .chatbot-edit-icon {
@@ -244,12 +262,17 @@
     cursor: pointer;
   }
   
-  .chatbot-form-preview {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 1px 4px rgba(37,99,235,0.06);
-    padding: 1rem;
-  }
+  .chatbot-form-value,
+.chatbot-form-preview input {
+  background: #fff !important;
+  color: #1a2b3b !important;
+  border: 1px solid #c3d3e2;
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  box-shadow: 0 1px 4px rgba(37,99,235,0.06);
+}
   
   .chatbot-form-label {
     font-size: 0.95rem;
@@ -257,11 +280,7 @@
     margin-top: 0.5rem;
   }
   
-  .chatbot-form-value {
-    font-size: 1rem;
-    color: #33475B;
-    margin-bottom: 0.2rem;
-  }
+  
   
   .chatbot-form-btn {
     margin-top: 0.7rem;
@@ -305,6 +324,7 @@
     font-size: 1rem;
     background: #f7fafd;
     text-align: center;
+    color: #1a2b3b;
   }
   
   .chatbot-timer-save-btn {
