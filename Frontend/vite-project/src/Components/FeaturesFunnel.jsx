@@ -13,9 +13,7 @@ export default function FeaturesFunnel() {
         <p>Nurture leads using our landing pages, surveys, forms, calendars, inbound phone system & more!</p>   
       </div>
       <div className="funnel-graphic">
-        <div className="funnel-placeholder">
-          <img src={funnel} alt="" />
-        </div>
+        <img src={funnel} alt="Features Funnel" className="funnel-image" />
       </div>
     </section>
   );

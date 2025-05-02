@@ -69,6 +69,8 @@
   margin-bottom: 0.6rem;
   padding-left: 1.2rem;
   position: relative;
+  color: #1a2b3b; 
+  font-size: 1rem;
 }
 
 .plan-card ul li:before {

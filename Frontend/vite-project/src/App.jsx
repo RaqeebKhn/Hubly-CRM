@@ -14,6 +14,7 @@ import Analytics from './components/Analytics';
 import ChatBot from './components/Chatbot';
 import Team from './components/Team';
 import Settings from './components/Settings';
+import ChatbotWidget from './components/ChatbotWidget'; // <-- Import the widget
 import './App.css';
 
 const ProtectedRoute = ({ children }) => {
@@ -40,6 +41,7 @@ function App() {
               <FeaturesFunnel />
               <PricingPlans />
               <Footer />
+              <ChatbotWidget /> {/* <-- Add the widget here */}
             </div>
           }
         />
